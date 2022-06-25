@@ -62,6 +62,9 @@ public class AddressBookMain {
                         System.out.println("List cannot be Deleted");
                     }
                     break;
+                default:
+                    flag = false;
+                    break;
             }
         }
     }
