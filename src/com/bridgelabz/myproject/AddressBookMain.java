@@ -40,6 +40,17 @@ public class AddressBookMain {
                         System.out.println("Cannot be Displayed");
                     }
                     break;
+                case 3:
+                    System.out.println("Enter Person First Name to Edit");
+                    String personName = sc.next();
+
+                    boolean listEdited = contactFunctions.editContactDetails(personName);
+                    if (listEdited) {
+                        System.out.println("List Edited Successfully");
+                    } else {
+                        System.out.println("List Cannot be Edited");
+                    }
+                    break;
             }
         }
     }
