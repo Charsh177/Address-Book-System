@@ -89,6 +89,12 @@ public class AddressBookMain {
                         addressBookMain.addAddressBook(addressBookName);
                     }
                     break;
+                case 2:
+                    for (Map.Entry<String, ContactFunctions> entry : addressBookMain.addressBookListMap.entrySet()) {
+                        ContactFunctions value = entry.getValue();
+                        System.out.println("Address Book Name : " + entry.getKey());
+                        value.checkDuplicate();
+                    }
             }
         }
     }

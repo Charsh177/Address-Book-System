@@ -1,7 +1,10 @@
 package com.bridgelabz.myproject;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class ContactFunctions {
     public static Scanner sc = new Scanner(System.in);
@@ -127,5 +130,13 @@ public class ContactFunctions {
         } else {
             return false;
         }
+    }
+
+    public void checkDuplicate() {
+        Set<String> contactSet = new HashSet<>();
+        Set<Person> filterSet = contactList.stream().filter(n -> !contactSet.add(n.getFirstName())).collect(Collectors.toSet());
+
+        for (Person contact : filterSet)
+            System.out.println("The Duplicate Contact is : " + contact.getFirstName());
     }
 }
