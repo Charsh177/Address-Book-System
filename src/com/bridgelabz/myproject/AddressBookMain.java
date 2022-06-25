@@ -51,6 +51,17 @@ public class AddressBookMain {
                         System.out.println("List Cannot be Edited");
                     }
                     break;
+                case 4:
+                    System.out.println("Enter Person First Name to Delete");
+                    String name = sc.next();
+
+                    boolean listDeleted = contactFunctions.deleteContact(name);
+                    if (listDeleted) {
+                        System.out.println("Deleted Contact from the list");
+                    } else {
+                        System.out.println("List cannot be Deleted");
+                    }
+                    break;
             }
         }
     }

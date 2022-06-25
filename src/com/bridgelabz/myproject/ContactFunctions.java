@@ -113,4 +113,19 @@ public class ContactFunctions {
         else
             return false;
     }
+    public boolean deleteContact(String Name) {
+        int flag = 0;
+        for (Person contact : contactList) {
+            if (contact.getFirstName().equals(Name)) {
+                contactList.remove(contact);
+                flag = 1;
+                break;
+            }
+        }
+        if (flag == 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
